@@ -3,6 +3,7 @@
 \usepackage{lipsum}
 \usepackage{graphicx}
 \usepackage{physics}
+\usepackage{amsmath}
 
 \begin{document}
 \title{Elementar-Teilchen-Theorie Notizen}
@@ -91,7 +92,7 @@ auslaufende $\ket{\beta, -}$ Zustaende als Eigenzustaende des Hamiltonians,
 \begin{equation}
 		H \ket{\alpha, \pm} = E_{\alpha} \ket{\alpha, \pm}
 \end{equation}
-so, dass fuer Messungen bei $t \to \pm \inf$ wie Eigenzustaende des Hamiltonians
+so, dass fuer Messungen bei $t \to \pm \infty$ wie Eigenzustaende des Hamiltonians
 $H_0$ fure freie Teilchen $\ket{\alpha}_0$ erscheinen.
 Die Zustaende $\ket{\alpha, +}$ und $\ket{\beta, -}$ bilden eine Basis desselben
 Hilbertraums. Daher koennen wir $\ket{\alpha, +}$ und $\ket{\beta, -}$
@@ -124,4 +125,75 @@ Der differnzielle Wirkungsquerschnitt $d\sigma$ ist definiert als
 		d\sigma(\alpha \to \beta) = \frac{d\Gamma(\alpha \to
 		\beta)}{\Phi_{\alpha}}
 \end{equation}
+Der differentieller Wirkungsquerschnitt fuer $2 \to 2$ Streuung im CMS ist
+gegeben durch
+\begin{equation}
+		\frac{d\sigma(\alpha \to \beta)}{d\Omega} = (2\pi)^4 \frac{E_1 E_2
+		E_1' E_2'}{E^2} \frac{k'}{k} |M_{\alpha \beta}|^2
+\end{equation}
+\subsection{optisches Theorem}
+\subsection{Stoerungstheorie}
+Ziel ist die Berechnung der S-Matrix durch Potenzreihenentwicklung im Wechselwirkungsterm.
+Dazu lassen sich die Zustaende schreiben als 
+\begin{equation}
+		\ket{\alpha, \pm} = \Omega(\mp \alpha)\ket{\alpha}_0
+\end{equation}
+mit 
+\begin{equation}
+		\Omega(t) = \exp(iHt) \cdot \exp(-iH_0t)
+\end{equation}
+Damit laesst sich die S-Matrix schreiben als 
+\begin{eqnarray}
+		\bra{\beta, -}\ket{\alpha, +} = \bra{\beta_0} \Omega^{\dag}(- \infty)
+		\Omega^{\dag}(- \infty) \ket{\alpha_0}\\
+		= \bra{\beta_0} U(+\infty, -\infty) \ket{\alpha_0}
+\end{eqnarray}
+wobei 
+\begin{equation}
+		\begin{split}
+				U(t,t') = \exp(iH_0t) \exp(-iH(t-t')) \\ \cdot \exp(-iH_0t')
+		\end{split}
+\end{equation}
+ist. Um U zu berechnen wird die Ableitung berechnet.
+\begin{equation}
+		\begin{split}
+				\frac{d}{dt} U(t,t') = \exp(iH_0t) [H-H_0] \\ \cdot \exp(-iH(t-t')) \exp(-iH_0t')
+		\end{split}
+\end{equation}
+wobei $H-H_0$ grade dem Potentail entspricht. Somit ergibt sich der Ausdruck
+\begin{equation}
+		\begin{split}
+				\frac{d}{dt} U(t,t') = -i \exp(iH_0t) V \exp(-iH_0t) \\ 
+				\cdot U(t, t') = -i V_I(t) U(t,t')
+		\end{split}
+\end{equation}
+Aus der Bedingung das $U(t',t')=1$ sowie 
+\begin{equation}
+		U(t,t') = I_n -i\int^t_{t'} dt \ V_I(t)U(t,t')
+\end{equation}
+Durch iteratives einsetzen kann U aufgeloest werden. \begin{equation}
+		\begin{split}
+				U(t,t') = I_n -i\int^t_{t'} dt \ V_I(t) + (-i)^2 \\ \cdot \int^t_{t'}
+				\int^{t_1}_{t'} dt_1 dt_2 \ V_I(t_1) V_I(t_2) + (-i)^3 \cdot (...)
+		\end{split}
+\end{equation}
+Dies kann auch mittels des Zeitgeordneten Produkts geschrieben werden indem 
+spaetere Zeiten links von frueheren Zeiten stehen.
+\begin{eqnarray}
+		T\{V(t)\} = V(t) \\
+		\begin{split}
+				T\{V(t_1)V(t_2)\} = \theta(t_1 -t_2)V(t_1)V(t_2) \\ + \theta(t_2 -t_1)V(t_2)V(t_1)
+		\end{split}
+\end{eqnarray}
+Entsprechend laesst sich die S-Matrix zu 
+\begin{equation}
+		\begin{split}
+				S_{\beta \alpha} = \sum^{\infty}_{n=0} \frac{(-i)^n}{n!} \int \ d^4x_1
+				\dots d^4x_n \cdot \\ \bra{\beta_0} T\{H(x_1) \dots H(x_n)\} \ket{\alpha_0}
+		\end{split}
+\end{equation}
+umschreiben.
+
+\section{Quantenfelder}
+Ziel ist Konstruktion einer Lorentzskalaren Wechselwirkungsdichte.
 \end{document}
