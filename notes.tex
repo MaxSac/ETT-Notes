@@ -196,5 +196,55 @@ umschreiben.
 
 \section{Quantenfelder}
 Ziel ist Konstruktion einer Lorentzskalaren Wechselwirkungsdichte.
-
+$\bra{p_1 \sigma_1 n_1, \ldots p_i \sigma_i n_i}$ bezeichnet den Zustand von
+Nteilchen mit Impuls, Spin und Sorte. Die Teilchen sind endweder Fermionen oder
+Boseonen so das sich das Vorzeichen rausziehen laesst.
+Die Zustaende sind entsprechend
+\begin{eqnarray}
+		\text{N=0:} \braket{0}{0} =& 1 \\
+		\text{N=1:} \braket{q'}{q} =& \delta_{p_1,p_2} \cdot
+\delta_{\sigma_1,\sigma_2} \cdot \delta_{n_1,n_2}
+\end{eqnarray}
+definiert.
+In aequivalenz zur HQM lassen sich die erzeuger und vernichter definieren.
+\begin{eqnarray}
+		a^{\dag}(q)\ket{q_1,q_2,q_3 \dots q_n} = \ket{q,q_1,q_2,q_3 \dots q_n}
+		\\
+		a^{\dag}(q) a^{\dag}(q_1) \dots a^{\dag}(q_n) \ket{0} = 
+		\ket{q,q_1 \dots q_n}\\
+		a(q) \bra{q} = \bra{0} \\
+		a(q) \bra{-} = 0 
+\end{eqnarray}
+Entsprechend erfuellen die Operatoren $a^{dag}$ und $a$ die Vertauschungsreation
+\begin{equation}
+		\left[a(q),a^{\dag}(q')\right]= \delta(q-q')
+\end{equation}
+Alle Operatoren, die auf den Hilbertraum der Vielteilchenzustaende wirken lassen
+sich als Summe von Produkten der Erzeuger und Vernichter schreiben. 
+Insbesondere gilt das fuer ddie Wechseldichte H(x).
+\subsection{Die Dirac-Algebra}
+Die Erzeuger der Drehung $\vec{J}$ erfuellen die Vertauschungsrelation
+$\left[J^i,J^j\right]=i\epsilon^{ijk}J^k$. 
+Nimmt man den Lorentzboost $\vec{k}$ mit hinzu, erhaelt man zusaetzlich
+\begin{eqnarray}
+		\left[J^i,K^j\right]=i\epsilon^{ijk}K^k \\
+		\left[K^i,K^j\right]=-i\epsilon^{ijk}J^k 
+\end{eqnarray}
+Mit $J=(J^{23}, J^{31}, J^{12})$ und $K=(J^{01}, J^{02}, J^{03})$ kann man dies
+kompakt schreiben als 
+\begin{equation}
+		\begin{split}
+		\left[ J^{\mu \nu}, J^{\rho \sigma} \right] = i \left( g^{\nu
+		\rho}J^{\mu \sigma} - g^{\mu \rho}J^{\nu \sigma} \\ - g^{\sigma \mu} 
+J^{\rho \nu} + g^{\sigma \nu}J^{\rho \mu} \right)
+\end{split}
+\end{equation}
+wobei $J^{\mu \nu} = -J^{\nu \mu}$ die Erzeuger der Lorentzgruppe sind, d.h.
+\begin{equation}
+		D(\Lambda)=\exp\left(-i/2 \omega_{\mu \nu} J^{\mu \nu} \right)
+\end{equation}
+Ein Boost entlang einer Richtung entspricht somit einer Drehung um die
+entsprechende Achse (\#Rapiditaet). 
+Fuer die Konstruktion der Spin 1/2 Darstellung  werden die Gamma-Matrizen
+definiert welche die Cliffordalgera erfuellen.
 \end{document}
